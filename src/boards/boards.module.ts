@@ -1,16 +1,10 @@
 import { Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { AuthModule } from 'src/auth/auth.module';
-import { BoardRepository } from './board.repository';
 import { BoardsController } from './boards.controller';
-import { BoardsService } from './boards.service';
+import { BoardsService } from 'src/boards/interfaces/boards.abstract';
+import { BoardsServiceBImpl } from './boardsB.service';
 
 @Module({
-  imports: [
-    TypeOrmModule.forFeature([BoardRepository]),
-    AuthModule
-  ],
   controllers: [BoardsController],
-  providers: [BoardsService]
+  providers: [{ provide: BoardsService, useClass: BoardsServiceBImpl }],
 })
 export class BoardsModule {}
