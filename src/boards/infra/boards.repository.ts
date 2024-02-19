@@ -1,8 +1,8 @@
 import { EntityTarget, Repository } from 'typeorm';
-import { TransactionManager } from './transaction.manager';
-import { BoardsEntity } from './boards/boards.entity';
+import { TransactionManager } from '../util/transaction.manager';
+import { BoardsEntity } from '../domain/boards.entity';
 
-export abstract class BoardRepository<T extends BoardsEntity> {
+export abstract class BoardsRepository<T extends BoardsEntity> {
   constructor(private readonly transactionManager: TransactionManager) {}
 
   abstract getName(): EntityTarget<T>;

@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
-import { BoardsController } from './boards.controller';
+import { BoardsController } from '../application/boards.controller';
 import { BoardsService } from 'src/boards/interfaces/boards.abstract';
-import { BoardsServiceBImpl } from './boardsB.service';
+import { BoardsServiceBImpl } from '../domain/boardsB.service';
 
 @Module({
   controllers: [BoardsController],

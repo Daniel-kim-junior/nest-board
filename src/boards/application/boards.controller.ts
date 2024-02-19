@@ -3,7 +3,7 @@ import { BoardsService } from 'src/boards/interfaces/boards.abstract';
 import {
   BoardModuleServiceType,
   BoardsModuleImpl,
-} from './interfaces/boards.interface';
+} from '../interfaces/boards.interface';
 
 @Controller('boards')
 export class BoardsController {
